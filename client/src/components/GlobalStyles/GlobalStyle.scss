@@ -1,0 +1,43 @@
+@import 'normalize.css';
+
+@font-face {
+    font-family: Averta-Light;
+    src: url(../../assets/fonts/Averta-Light.otf) format("truetype");
+}
+@font-face {
+    font-family: Averta-Bold;
+    src: url(../../assets/fonts/Averta-Bold.otf) format("truetype");
+}
+@font-face {
+    font-family: Averta-Semibold;
+    src: url(../../assets/fonts/Averta-Semibold.otf) format("truetype");
+}
+
+:root {
+    --bg: #fff;
+    --color: #000;
+    --primary-font: Averta;
+    --primary-font-bold: Averta-Bold;
+    --primary-font-semibold: Averta-Semibold;
+    --overlay: rgba(0, 0, 0, 0.3);
+    --primary: #0F4C81;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: var(--primary-font), sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+    background-color: var(--bg);
+    color: var(--color);
+}

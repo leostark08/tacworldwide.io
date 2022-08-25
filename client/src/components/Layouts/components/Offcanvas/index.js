@@ -1,17 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './Offcanvas.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt } from 'react-icons/fa';
 
 const cx = classNames.bind(styles);
 
 function Offcanvas() {
-    useEffect(() => {});
+    const [toggle, changeToggle] = useState(false);
 
     return (
-        <div className={cx('offcanvas')}>
-            <input className={cx('offcanvas__checkbox')} type="checkbox" id="toggle-checkbox" name="" />
+        <div className={cx('offcanvas', toggle ? 'offcanvas--active' : '')}>
+            <input
+                className={cx('offcanvas__checkbox')}
+                type="checkbox"
+                id="toggle-checkbox"
+                name=""
+                onChange={() => changeToggle(!toggle)}
+            />
             <label for="toggle-checkbox" className={cx('offcanvas__toggle')}>
                 <div className={cx('offcanvas__toggle__line')}></div>
             </label>

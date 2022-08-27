@@ -56,3 +56,12 @@ body {
         font-weight: 300;
     }
 }
+
+.title {
+    &--primary {
+        font-size: 3rem;
+    }
+    &--secondary {
+        font-size: 3rem;
+    }
+}

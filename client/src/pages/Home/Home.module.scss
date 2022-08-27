@@ -1,5 +1,10 @@
-.hero{
+.about-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     &__vision {
         font-size: 5rem;
+        text-align: center;
     }
 }

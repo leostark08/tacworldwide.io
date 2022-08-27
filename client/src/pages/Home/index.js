@@ -7,11 +7,17 @@ const cx = classNames.bind(styles);
 
 function Home() {
     return (
-        <div className={cx('hero')}>
-            <span className={cx('hero__vision')}>
-                TAC provides communications consultancy, strategic development, creative development to deliver winning
-                solutions for clients and brands.
-            </span>
+        <div>
+            <section id={cx('about-us')} className={cx('about-us')}>
+                <p className={cx('about-us__vision')}>
+                    TAC provides communications consultancy,<br></br> strategic development,<br></br> creative
+                    development to deliver winning solutions <br></br>for clients and brands.
+                </p>
+            </section>
+            <section id={cx('partner')} className={cx('partner')}>
+                <span className={cx('partner__title', 'title--secondary')}>OUR CLIENTS</span>
+                <span className={cx('partner__sapo')}>text</span>
+            </section>
         </div>
     );
 }

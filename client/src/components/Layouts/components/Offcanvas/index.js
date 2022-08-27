@@ -18,10 +18,10 @@ function Offcanvas() {
                 name=""
                 onChange={() => changeToggle(!toggle)}
             />
-            <label for="toggle-checkbox" className={cx('offcanvas__toggle')}>
+            <label htmlFor="toggle-checkbox" className={cx('offcanvas__toggle')}>
                 <div className={cx('offcanvas__toggle__line')}></div>
             </label>
-            <label for="toggle-checkbox" className={cx('offcanvas__overlay')}></label>
+            <label htmlFor="toggle-checkbox" className={cx('offcanvas__overlay')}></label>
             <div className={cx('offcanvas__dialog')}>
                 <div className={cx('offcanvas__dialog__menu')}>
                     <ul className={cx('offcanvas__dialog__menu--primary')}>

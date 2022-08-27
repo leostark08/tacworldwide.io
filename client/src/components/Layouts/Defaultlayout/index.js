@@ -8,9 +8,9 @@ function DefaultLayout({ children }) {
     return (
         <div>
             <Header></Header>
-            <div class={cx('container')}>
+            <div className={cx('container')}>
                 <Offcanvas />
-                <div class="content">{children}</div>
+                <div className="content">{children}</div>
             </div>
         </div>
     );

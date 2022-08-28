@@ -43,6 +43,9 @@ body {
     background-color: var(--bg);
     color: var(--color);
 }
+img {
+    width: 100%;
+}
 .button{
     &--primary {
         padding: 1.5rem 3rem;
@@ -59,11 +62,21 @@ body {
     }
 }
 
-.title {
-    &--primary {
-        font-size: 3rem;
+.heading {
+    &--1 {
+        font-size: 7rem;
+        font-weight: 600;
     }
-    &--secondary {
-        font-size: 3rem;
+    &--2 {
+        font-size: 4.5rem;
+        font-weight: 600;
     }
+}
+.describe {
+    font-size: 2rem;
+}
+
+.section {
+    width: 80%;
+    margin: auto auto;
 }

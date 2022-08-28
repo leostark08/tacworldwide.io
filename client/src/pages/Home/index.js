@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
 
 const cx = classNames.bind(styles);
 

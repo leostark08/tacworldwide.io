@@ -12,11 +12,16 @@
     font-family: Averta-Semibold;
     src: url(../../assets/fonts/Averta-Semibold.otf) format("truetype");
 }
+@font-face {
+    font-family: Averta-Thin;
+    src: url(../../assets/fonts/Averta-Thin.otf) format("truetype");
+}
 
 :root {
     --bg: #fff;
     --color: #000;
     --primary-font: Averta;
+    --primary-font-thin: Averta-Thin;
     --primary-font-bold: Averta-Bold;
     --primary-font-semibold: Averta-Semibold;
     --overlay: rgba(0, 0, 0, 0.3);

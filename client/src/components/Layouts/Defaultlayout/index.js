@@ -1,5 +1,4 @@
 import Header from '~/components/Layouts/components/Header';
-import Offcanvas from '~/components/Layouts/components/Offcanvas';
 import styles from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 
@@ -9,7 +8,6 @@ function DefaultLayout({ children }) {
         <div>
             <Header></Header>
             <div className={cx('container')}>
-                <Offcanvas />
                 <div className="content">{children}</div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -7,6 +7,8 @@ import SwiperCore, { Autoplay, Pagination, Navigation, EffectCards, Virtual } fr
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import diageo from '../../assets/images/logo/diageo.png';
 import fasgreat from '../../assets/images/logo/fasgreat.png';
@@ -57,61 +59,84 @@ const services = [
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Digital/Media',
         coverUrl: academy,
+        childs: ['Media Planning', 'Media Buying'],
     },
 ];
 
+const AOS_DURATION = 2000;
 const logo2gr = new Array(Math.ceil(logos.length / NUMBER_OF_LOGO)).fill().map((_) => logos.splice(0, NUMBER_OF_LOGO));
 function Home() {
+    useEffect(() => {
+        AOS.init({
+            duration: AOS_DURATION,
+            once: false,
+        });
+        AOS.refresh();
+    }, []);
     return (
         <>
             <section id={cx('about-us')} className={cx('about-us', 'section')}>
-                <p className={cx('about-us__vision')}>
-                    TAC provides communications consultancy,<br></br> strategic development,<br></br> creative
-                    development to deliver winning solutions <br></br>for clients and brands.
+                <div className={cx('about-us__core-value')}>
+                    <span data-aos="zoom-in-down">Inspire - Creative - Energy - Unique</span>
+                </div>
+                <p className={cx('about-us__vision')} data-aos="zoom-in">
+                    TAC provides communications consultancy, strategic development,<br></br> creative development to
+                    deliver winning solutions for clients and brands.
                 </p>
             </section>
             <section id={cx('partner')} className={cx('partner', 'section')}>
@@ -130,13 +155,14 @@ function Home() {
                             loop={true}
                             simulateTouch={false}
                             autoplay={{
-                                delay: 3000 + index * 100,
+                                delay: 4000 + index * 100,
                                 disableOnInteraction: false,
                             }}
                             pagination={{
                                 clickable: true,
                             }}
                             modules={[Autoplay, Pagination, Navigation]}
+                            data-aos="zoom-in"
                         >
                             {group.map((logo, i) => (
                                 <SwiperSlide key={i}>
@@ -175,20 +201,19 @@ function Home() {
                 </div>
             </section>
             <section id={cx('service')} className={cx('service', 'section')}>
-                <Swiper
-                    className={cx('swiper partner-swiper', 'partner__logos__swiper')}
-                    spaceBetween={20}
-                    centeredSlides={true}
-                    slidesPerView={3}
-                    navigation={true}
-                    virtual
-                >
-                    {services.map((service, i) => (
-                        <SwiperSlide key={i} virtualIndex={i}>
-                            {<img className={cx('partner__logos__img')} src={service.coverUrl} alt="Partner Logo" />}
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                {services.map((service, i) => (
+                    <div className={cx('service__item')}>
+                        <div className={cx('service__item__info')}>
+                            <div className={cx('service__item__info__name')}>{service.name}</div>
+                            {service.childs.map((child, j) => (
+                                <div>{child}</div>
+                            ))}
+                        </div>
+                        <div className={cx('service__item__cover')}>
+                            <img src={service.coverUrl} alt={service.name} />
+                        </div>
+                    </div>
+                ))}
             </section>
         </>
     );

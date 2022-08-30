@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt } from 'react-icons/fa';
@@ -10,28 +10,61 @@ const cx = classNames.bind(styles);
 
 const AOS_DURATION = 2000;
 function Header() {
+    const [isTop, toggleTop] = useState(true);
+    const [y, setY] = useState(window.scrollY);
+    const [isScrollUp, toggleScroll] = useState(true);
+
     useEffect(() => {
+        console.log('rerender aos');
         AOS.init({
             duration: AOS_DURATION,
         });
         AOS.refresh();
     }, []);
+
+    const isScroll2Top = useCallback(
+        (e) => {
+            var is = y > window.scrollY;
+            setY(window.scrollY);
+            return is;
+        },
+        [y],
+    );
+
+    useEffect(() => {
+        console.log('rerender scroll');
+        const handleScroll = (event) => {
+            toggleTop(window.scrollY === 0);
+            setY(window.screenY);
+            toggleScroll(isScroll2Top());
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [isScroll2Top]);
+
     const [toggle, changeToggle] = useState(false);
     return (
         <div className={cx('header', toggle ? 'header--active' : '')}>
-            <input
-                className={cx('header__checkbox')}
-                type="checkbox"
-                id="header-checkbox"
-                onChange={() => changeToggle(!toggle)}
-            />
-            <div className={cx('header__bar')}>
-                <label htmlFor="header-checkbox" className={cx('header__bar__toggle')}>
+            <div
+                className={cx(
+                    'header__bar',
+                    isTop ? 'header__bar--transparent' : '',
+                    isScrollUp ? 'header__bar--down' : '',
+                )}
+            >
+                <label
+                    htmlFor="header-checkbox"
+                    className={cx('header__bar__toggle')}
+                    onClick={(e) => changeToggle(!toggle)}
+                >
                     <div className={cx('header__bar__toggle__line')}></div>
                 </label>
                 <div className={cx('header__bar__logo')}>Everyday epic</div>
                 <Link to="#" className={cx('header__bar__cta button--primary')}>
-                    Contact Us
+                    <span>Contact Us</span>
                 </Link>
                 {/* <RippleButton onClick={(e) => console.log(e)}>Contact Us</RippleButton> */}
             </div>

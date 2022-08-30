@@ -4,14 +4,17 @@
     font-family: Averta-Light;
     src: url(../../assets/fonts/Averta-Light.otf) format("truetype");
 }
+
 @font-face {
     font-family: Averta-Bold;
     src: url(../../assets/fonts/Averta-Bold.otf) format("truetype");
 }
+
 @font-face {
     font-family: Averta-Semibold;
     src: url(../../assets/fonts/Averta-Semibold.otf) format("truetype");
 }
+
 @font-face {
     font-family: Averta-Thin;
     src: url(../../assets/fonts/Averta-Thin.otf) format("truetype");
@@ -48,10 +51,12 @@ body {
     background-color: var(--bg);
     color: var(--color);
 }
+
 img {
     width: 100%;
 }
-.button{
+
+.button {
     &--primary {
         padding: 1.5rem 3rem;
         background-color: var(--color);
@@ -64,6 +69,8 @@ img {
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 300;
+        display: flex;
+        align-items: center;
     }
 }
 
@@ -72,17 +79,29 @@ img {
         font-size: 7rem;
         font-weight: 600;
     }
+
     &--2 {
         font-size: 4.5rem;
         font-weight: 600;
     }
 }
+
 .describe {
     font-family: var(--primary-font-thin);
     font-size: 2.5rem;
 }
 
-.section {
-    width: 80%;
-    margin: auto auto;
+.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after,
+    &::before {
+        margin: 0 5rem;
+        content: '';
+        height: 1px;
+        flex: 1;
+        background-color: var(--color);
+    }
 }

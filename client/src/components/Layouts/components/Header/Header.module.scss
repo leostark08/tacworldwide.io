@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     z-index: 999;
+
     &__bar {
         width: 100%;
         display: flex;
@@ -10,8 +11,14 @@
         z-index: 999;
         position: fixed;
         padding: 2rem 4rem;
+        background-color: var(--bg);
+        align-items: center;
+        transition: all .5s;
+        transform: translateY(-100%);
+
         &__toggle {
             cursor: pointer;
+
             &__line {
                 width: 40px;
                 height: 4px;
@@ -19,6 +26,7 @@
                 position: relative;
                 margin: 3rem 0;
                 transition: transform 0.4s ease-in-out;
+
                 &::before {
                     content: '';
                     top: -1rem;
@@ -31,29 +39,53 @@
                 }
             }
         }
+
+        &__logo {
+            font-size: 3rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &--transparent {
+            background-color: transparent;
+        }
+
+        &--down {
+            transform: translateY(0);
+        }
     }
+
     &--active {
-        width: 100%;
         .header__bar__toggle .header__bar__toggle__line {
             transform: rotate(45deg);
         }
+
         .header__bar__toggle .header__bar__toggle__line {
             transform: rotate(45deg);
         }
+
         .header__bar__toggle .header__bar__toggle__line::before {
             width: 100%;
             transform: rotate(90deg);
             top: 0;
         }
+
         .header__dialog {
-        transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .header__bar {
+            transform: translateY(0);
         }
     }
+
     &__checkbox {
         width: 0;
         height: 0;
         opacity: 0;
     }
+
     &__dialog {
         width: 100%;
         padding-right: 10rem;
@@ -131,6 +163,7 @@
                     &__link {
                         position: relative;
                         padding: 0.5rem 0;
+
                         &::before {
                             content: '';
                             position: absolute;
@@ -155,6 +188,7 @@
                     justify-content: space-between;
                 }
             }
+
             &--contact {
                 display: flex;
                 flex-direction: column;

@@ -31,7 +31,7 @@ import academy from '../../assets/images/about-us/academy.jpg';
 import marketing from '../../assets/images/about-us/marketing.jpeg';
 import strategy from '../../assets/images/about-us/strategy.jpg';
 const cx = classNames.bind(styles);
-const NUMBER_OF_LOGO = 6;
+const NUMBER_OF_LOGO = 5;
 SwiperCore.use([Virtual, Navigation, Pagination]);
 const logos = [
     diageo,
@@ -42,14 +42,12 @@ const logos = [
     isuzu,
     kao,
     keep_working_club,
-    laurier,
     schneider,
     suzuki,
     timebeat,
     timebit,
     timebit_otc,
     toyota,
-    unilever_studio,
     unilever,
 ];
 
@@ -57,64 +55,73 @@ const aboutImgs = [academy, marketing, strategy];
 
 const services = [
     {
-        name: 'Digital/Media',
+        name: 'Branding Strategy & Creative',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: [
+            'Brand strategy',
+            'Communication strategy',
+            'Creative strategy & concepts development',
+            'Insight development and trend mapping',
+            'Brand keys and message houses',
+        ],
     },
     {
-        name: 'Digital/Media',
+        name: 'Integrated Digital Marketing',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: ['Strategy & campaigns', 'Concept development', 'Social Media', 'Content Creative & Development'],
     },
     {
-        name: 'Digital/Media',
+        name: 'PR',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: ['Strategic media relations', 'Communications Strategy', 'Community Management', 'Product Launching '],
     },
     {
-        name: 'Digital/Media',
+        name: 'Strategic advisory',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: ['Stakeholder engagement and insight generation', 'Competitor landscape analysis'],
     },
     {
-        name: 'Digital/Media',
+        name: 'Data-driven Marketing',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: ['SEO', 'Web/App Content', 'Online Ads', 'Dat management & automation'],
     },
     {
-        name: 'Digital/Media',
+        name: 'Influencer Marketing',
         coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        childs: ['Influencer/KOLs managerment', 'KOLs booking'],
+    },
+];
+
+const works = [
+    {
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
     },
     {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
     },
     {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
     },
     {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
     },
     {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
-    },
-    {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
-    },
-    {
-        name: 'Digital/Media',
-        coverUrl: academy,
-        childs: ['Media Planning', 'Media Buying'],
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
     },
 ];
 
@@ -130,7 +137,7 @@ function Home() {
     }, []);
     return (
         <>
-            <section id={cx('about-us')} className={cx('about-us', 'section')}>
+            <section id={cx('about-us')} className={cx('about-us')}>
                 <div className={cx('about-us__core-value')}>
                     <span data-aos="zoom-in">Inspire - Creative - Energy - Unique</span>
                 </div>
@@ -140,85 +147,115 @@ function Home() {
                     <br></br> to deliver winning solutions for clients and brands.
                 </p>
             </section>
-            <section id={cx('partner')} className={cx('partner', 'section')}>
-                <span className={cx('partner__heading', 'heading--2')}>OUR CLIENTS</span>
-                <span className={cx('partner__describe', 'describe')}>
-                    Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius;
-                    dignissim elementum.
-                </span>
-                <div className={cx('partner__logos')}>
-                    {logo2gr.map((group, index) => (
+            <div className={cx('content-container')}>
+                <section id={cx('partner')} className={cx('partner', 'section')}>
+                    <span className={cx('partner__heading', 'heading--2')}>OUR CLIENTS</span>
+                    <span className={cx('partner__describe', 'describe')}>
+                        Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius;
+                        dignissim elementum.
+                    </span>
+                    <div className={cx('partner__logos')}>
+                        {logo2gr.map((group, index) => (
+                            <Swiper
+                                key={index}
+                                className={cx('swiper partner-swiper', 'partner__logos__swiper')}
+                                spaceBetween={150}
+                                slidesPerView={5}
+                                loop={true}
+                                simulateTouch={false}
+                                // autoplay={{
+                                //     delay: 4000 + index * 100,
+                                //     disableOnInteraction: false,
+                                // }}
+                                pagination={{
+                                    clickable: true,
+                                }}
+                                modules={[Autoplay, Pagination, Navigation]}
+                                data-aos="zoom-in"
+                            >
+                                {group.map((logo, i) => (
+                                    <SwiperSlide key={i}>
+                                        {<img className={cx('partner__logos__img')} src={logo} alt="Partner Logo" />}
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        ))}
+                    </div>
+                </section>
+                <section id={cx('about')} className={cx('about', 'section')}>
+                    <span className={cx('about__heading', 'heading--1')} data-aos="zoom-in-up">
+                        What we are?
+                    </span>
+                    <div className={cx('about__content')}>
+                        <div className={cx('about__content__describe')} data-aos="zoom-in">
+                            <p className={cx('describe')}>
+                                We believe that that there is a DOER in all of us who always have a indomitable spirit
+                                to do what can’t be done.
+                            </p>
+                            <p className={cx('describe')}>
+                                We are a creatively driven integrated marketing communications, fostering collaboration
+                                throughout the group with a strong innovation in technology-based.
+                            </p>
+                        </div>
                         <Swiper
-                            key={index}
-                            className={cx('swiper partner-swiper', 'partner__logos__swiper')}
-                            spaceBetween={150}
-                            slidesPerView={5}
-                            loop={true}
-                            simulateTouch={false}
-                            autoplay={{
-                                delay: 4000 + index * 100,
-                                disableOnInteraction: false,
-                            }}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            modules={[Autoplay, Pagination, Navigation]}
+                            effect={'cards'}
+                            grabCursor={true}
+                            modules={{ EffectCards }}
+                            className={cx('about__content__swiper', 'swiper')}
                             data-aos="zoom-in"
                         >
-                            {group.map((logo, i) => (
-                                <SwiperSlide key={i}>
-                                    {<img className={cx('partner__logos__img')} src={logo} alt="Partner Logo" />}
+                            {aboutImgs.map((img, i) => (
+                                <SwiperSlide>
+                                    <img src={img} alt="about-us" />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
-                    ))}
-                </div>
-            </section>
-            <section id={cx('about')} className={cx('about', 'section')}>
-                <span className={cx('about__heading', 'heading--1')} data-aos="zoom-in-up">
-                    WHAT WE ARE?
-                </span>
-                <div className={cx('about__content')}>
-                    <div className={cx('about__content__describe')} data-aos="fade-right">
-                        <p className={cx('describe')}>
-                            We believe that that there is a DOER in all of us who always have a indomitable spirit to do
-                            what can’t be done.
-                        </p>
-                        <p className={cx('describe')}>
-                            We are a creatively driven integrated marketing communications, fostering collaboration
-                            throughout the group with a strong innovation in technology-based.
-                        </p>
                     </div>
-                    <Swiper
-                        effect={'cards'}
-                        grabCursor={true}
-                        modules={{ EffectCards }}
-                        className={cx('about__content__swiper', 'swiper')}
-                        data-aos="fade-left"
-                    >
-                        {aboutImgs.map((img, i) => (
-                            <SwiperSlide>
-                                <img src={img} alt="about-us" />
-                            </SwiperSlide>
+                </section>
+                <section id={cx('service')} className={cx('service', 'section')}>
+                    <span className={cx('service__heading')}>
+                        Our<br></br>Services
+                    </span>
+                    <div className={cx('service__list')}>
+                        {services.map((service, i) => (
+                            <div className={cx('service__list__item')} data-aos="fade-down" data-aos-delay={5000}>
+                                <div className={cx('service__item__cover')}>
+                                    <img src={service.coverUrl} alt={service.name} />
+                                </div>
+                                <div className={cx('service__list__item__info')}>
+                                    <div className={cx('service__list__item__info__name')}>{service.name}</div>
+                                    <div className={cx('service__list__item__info__child')}>
+                                        {service.childs.map((child, j) => (
+                                            <span>{child}</span>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
                         ))}
-                    </Swiper>
-                </div>
-            </section>
-            <section id={cx('service')} className={cx('service', 'section')}>
-                {services.map((service, i) => (
-                    <div className={cx('service__item')}>
-                        <div className={cx('service__item__info')}>
-                            <div className={cx('service__item__info__name')}>{service.name}</div>
-                            {service.childs.map((child, j) => (
-                                <div className={cx('service__item__info__child')}>{child}</div>
-                            ))}
-                        </div>
-                        <div className={cx('service__item__cover')}>
-                            <img src={service.coverUrl} alt={service.name} />
-                        </div>
                     </div>
-                ))}
-            </section>
+                    <div className={cx('service__more', 'more')}>
+                        <Link to="#" className={cx('button--primary')}>
+                            View all services
+                        </Link>
+                    </div>
+                </section>
+
+                <section className={cx('works', '')}>
+                    <span className={cx('works__heading', 'heading--1')}>Let's see a selection of our work!</span>
+                    <div className={cx('works__list')}>
+                        {works.map((work, i) => (
+                            <div className={cx('works__list__item')}>
+                                <img src={work.cover} alt={work.name} className={cx('works__list__item__cover')} />
+                                <div className={cx('works__list__item__info')}>
+                                    <span>{work.client}</span>
+                                    <span>{work.name}</span>
+                                    <span>{work.role}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
         </>
     );
 }

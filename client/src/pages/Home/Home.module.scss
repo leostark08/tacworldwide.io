@@ -11,7 +11,7 @@
         font-weight: 600;
     }
     &__vision {
-        font-size: 4.5rem;
+        font-size: 3rem;
         text-align: center;
         font-family: var(--primary-font-thin);
         margin-top: 5rem;
@@ -58,5 +58,31 @@
     }
 }
 .service {
-
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+            .service__item__info {
+                align-items: flex-start;
+            }
+        }
+        &__info {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex-direction: column;
+            flex: 1;
+            &__name {
+                font-size: 2.5rem;
+            }
+            &__child {
+                font-size: 2rem;
+                font-family: var(--primary-font-thin);
+            }
+        }
+        &__cover {
+            flex:1;
+        }
+    }
 }

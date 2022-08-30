@@ -132,11 +132,12 @@ function Home() {
         <>
             <section id={cx('about-us')} className={cx('about-us', 'section')}>
                 <div className={cx('about-us__core-value')}>
-                    <span data-aos="zoom-in-down">Inspire - Creative - Energy - Unique</span>
+                    <span data-aos="zoom-in">Inspire - Creative - Energy - Unique</span>
                 </div>
-                <p className={cx('about-us__vision')} data-aos="zoom-in">
-                    TAC provides communications consultancy, strategic development,<br></br> creative development to
-                    deliver winning solutions for clients and brands.
+                <p className={cx('about-us__vision')} data-aos="fade-up">
+                    Everyday epic provides <br></br> communications consultancy, strategic development, creative
+                    development
+                    <br></br> to deliver winning solutions for clients and brands.
                 </p>
             </section>
             <section id={cx('partner')} className={cx('partner', 'section')}>
@@ -174,14 +175,16 @@ function Home() {
                 </div>
             </section>
             <section id={cx('about')} className={cx('about', 'section')}>
-                <span className={cx('about__heading', 'heading--1')}>WHAT WE ARE?</span>
+                <span className={cx('about__heading', 'heading--1')} data-aos="zoom-in-up">
+                    WHAT WE ARE?
+                </span>
                 <div className={cx('about__content')}>
-                    <div className={cx('about__content__describe')}>
-                        <p>
+                    <div className={cx('about__content__describe')} data-aos="fade-right">
+                        <p className={cx('describe')}>
                             We believe that that there is a DOER in all of us who always have a indomitable spirit to do
                             what can’t be done.
                         </p>
-                        <p>
+                        <p className={cx('describe')}>
                             We are a creatively driven integrated marketing communications, fostering collaboration
                             throughout the group with a strong innovation in technology-based.
                         </p>
@@ -191,6 +194,7 @@ function Home() {
                         grabCursor={true}
                         modules={{ EffectCards }}
                         className={cx('about__content__swiper', 'swiper')}
+                        data-aos="fade-left"
                     >
                         {aboutImgs.map((img, i) => (
                             <SwiperSlide>
@@ -206,7 +210,7 @@ function Home() {
                         <div className={cx('service__item__info')}>
                             <div className={cx('service__item__info__name')}>{service.name}</div>
                             {service.childs.map((child, j) => (
-                                <div>{child}</div>
+                                <div className={cx('service__item__info__child')}>{child}</div>
                             ))}
                         </div>
                         <div className={cx('service__item__cover')}>

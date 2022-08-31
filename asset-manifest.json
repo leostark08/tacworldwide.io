@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/tacworldwide.io/static/css/main.a93c0ae9.css",
+    "main.js": "/tacworldwide.io/static/js/main.b631b030.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/tacworldwide.io/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/banner2.jpg": "/tacworldwide.io/static/media/banner2.c74cf93e449f3b3222f5.jpg",
+    "static/media/marketing.jpeg": "/tacworldwide.io/static/media/marketing.27d3a3513dad7debcf33.jpeg",
+    "static/media/timebeat.png": "/tacworldwide.io/static/media/timebeat.b174e21ce61416a2dfec.png",
+    "static/media/hyundai-tc-motor.png": "/tacworldwide.io/static/media/hyundai-tc-motor.ff47912795040fbd04d0.png",
+    "static/media/strategy.jpg": "/tacworldwide.io/static/media/strategy.a6ad21686bbe30d11079.jpg",
+    "static/media/Averta-Bold.otf": "/tacworldwide.io/static/media/Averta-Bold.91ae0266eb5c334910d2.otf",
+    "static/media/Averta-Thin.otf": "/tacworldwide.io/static/media/Averta-Thin.b7b65d233f0fa7d3b53b.otf",
+    "static/media/Averta-Light.otf": "/tacworldwide.io/static/media/Averta-Light.2eb19cf66738c9926413.otf",
+    "static/media/Averta-Semibold.otf": "/tacworldwide.io/static/media/Averta-Semibold.3cbea55cef956724c095.otf",
+    "static/media/toyota.png": "/tacworldwide.io/static/media/toyota.f7d41b38bf469b19c9ab.png",
+    "static/media/unilever.png": "/tacworldwide.io/static/media/unilever.3bdc3a31bc2d176d2066.png",
+    "static/media/timebit-otc.png": "/tacworldwide.io/static/media/timebit-otc.d2b7313cd2159de6ae13.png",
+    "static/media/keep-working-club.png": "/tacworldwide.io/static/media/keep-working-club.0081dcadf1638e53928e.png",
+    "static/media/laurier.png": "/tacworldwide.io/static/media/laurier.db61aa2cec70ae6ef9be.png",
+    "static/media/unilever-studio.png": "/tacworldwide.io/static/media/unilever-studio.830725da6040a5719867.png",
+    "static/media/academy.jpg": "/tacworldwide.io/static/media/academy.be9e6a7a0015cf2fc14a.jpg",
+    "static/media/honda.png": "/tacworldwide.io/static/media/honda.a74e8f43a02d385a9786.png",
+    "static/media/kao.png": "/tacworldwide.io/static/media/kao.98476482d1bdf9436bfa.png",
+    "static/media/schneider.png": "/tacworldwide.io/static/media/schneider.46605cb2978b52f603f2.png",
+    "static/media/suzuki.png": "/tacworldwide.io/static/media/suzuki.687ebbe2ca0183f9dd35.png",
+    "static/media/generali.png": "/tacworldwide.io/static/media/generali.509934e94683b92e7a64.png",
+    "static/media/timebit.png": "/tacworldwide.io/static/media/timebit.c94722f72745145b39e5.png",
+    "static/media/fasgreat.png": "/tacworldwide.io/static/media/fasgreat.38174529369ff349b29f.png",
+    "static/media/diageo.png": "/tacworldwide.io/static/media/diageo.a5dd705c6a7ed7e3f29c.png",
+    "index.html": "/tacworldwide.io/index.html",
+    "main.a93c0ae9.css.map": "/tacworldwide.io/static/css/main.a93c0ae9.css.map",
+    "main.b631b030.js.map": "/tacworldwide.io/static/js/main.b631b030.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/tacworldwide.io/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a93c0ae9.css",
+    "static/js/main.b631b030.js"
+  ]
+}

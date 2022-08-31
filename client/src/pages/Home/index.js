@@ -239,7 +239,7 @@ function Home() {
                         ))}
                     </div>
                     <div className={cx('service__more', 'more')}>
-                        <Link to="#" className={cx('button--primary')}>
+                        <Link to="/service" className={cx('button--primary')}>
                             View all services
                         </Link>
                     </div>

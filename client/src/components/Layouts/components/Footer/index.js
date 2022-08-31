@@ -23,7 +23,7 @@ function Footer() {
 
     return (
         <div className={cx('footer')}>
-            <div className={cx('footer__logo')} data-aos="zoom-in">
+            <div className={cx('footer__logo')}>
                 <span>Everyday epic!</span>
             </div>
             <div className={cx('footer__menu')} data-aos="zoom-in">

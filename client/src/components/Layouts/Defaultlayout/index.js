@@ -1,4 +1,5 @@
 import Header from '~/components/Layouts/components/Header';
+import Footer from '~/components/Layouts/components/Footer';
 import styles from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 
@@ -10,6 +11,7 @@ function DefaultLayout({ children }) {
             <div className={cx('container')}>
                 <div className="content">{children}</div>
             </div>
+            <Footer></Footer>
         </div>
     );
 }

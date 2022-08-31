@@ -123,6 +123,12 @@ const works = [
         role: 'Main role',
         cover: strategy,
     },
+    {
+        name: 'Project name',
+        client: 'Client',
+        role: 'Main role',
+        cover: strategy,
+    },
 ];
 
 const AOS_DURATION = 2000;
@@ -131,7 +137,6 @@ function Home() {
     useEffect(() => {
         AOS.init({
             duration: AOS_DURATION,
-            once: false,
         });
         AOS.refresh();
     }, []);
@@ -184,7 +189,7 @@ function Home() {
                 </section>
                 <section id={cx('about')} className={cx('about', 'section')}>
                     <span className={cx('about__heading', 'heading--1')} data-aos="zoom-in-up">
-                        What we are?
+                        Who we are?
                     </span>
                     <div className={cx('about__content')}>
                         <div className={cx('about__content__describe')} data-aos="zoom-in">
@@ -205,7 +210,7 @@ function Home() {
                             data-aos="zoom-in"
                         >
                             {aboutImgs.map((img, i) => (
-                                <SwiperSlide>
+                                <SwiperSlide key={i}>
                                     <img src={img} alt="about-us" />
                                 </SwiperSlide>
                             ))}
@@ -213,12 +218,12 @@ function Home() {
                     </div>
                 </section>
                 <section id={cx('service')} className={cx('service', 'section')}>
-                    <span className={cx('service__heading')}>
+                    <span className={cx('service__heading')} data-aos="zoom-in">
                         Our<br></br>Services
                     </span>
                     <div className={cx('service__list')}>
                         {services.map((service, i) => (
-                            <div className={cx('service__list__item')} data-aos="fade-down" data-aos-delay={5000}>
+                            <div className={cx('service__list__item')} data-aos="fade-up">
                                 <div className={cx('service__item__cover')}>
                                     <img src={service.coverUrl} alt={service.name} />
                                 </div>
@@ -241,18 +246,26 @@ function Home() {
                 </section>
 
                 <section className={cx('works', '')}>
-                    <span className={cx('works__heading', 'heading--1')}>Let's see a selection of our work!</span>
+                    <span className={cx('works__describe')} data-aos="fade-up" data-aos-duration="5000">
+                        TAC provides communications consultancy, strategic development, creative development to deliver
+                        winning solutions for clients and brands.{' '}
+                    </span>
                     <div className={cx('works__list')}>
                         {works.map((work, i) => (
-                            <div className={cx('works__list__item')}>
+                            <div className={cx('works__list__item')} data-aos="fade-up">
                                 <img src={work.cover} alt={work.name} className={cx('works__list__item__cover')} />
                                 <div className={cx('works__list__item__info')}>
-                                    <span>{work.client}</span>
-                                    <span>{work.name}</span>
-                                    <span>{work.role}</span>
+                                    <span className={cx('works__list__item__info__client')}>{work.client}</span>
+                                    <span className={cx('works__list__item__info__name')}>{work.name}</span>
+                                    <span className={cx('works__list__item__info__role')}>{work.role}</span>
                                 </div>
                             </div>
                         ))}
+                    </div>
+                    <div className={cx('works__more', 'more')}>
+                        <Link to="#" className={cx('button--primary')}>
+                            View all works
+                        </Link>
                     </div>
                 </section>
             </div>

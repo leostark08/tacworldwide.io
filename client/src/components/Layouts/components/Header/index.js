@@ -15,7 +15,6 @@ function Header() {
     const [isScrollUp, toggleScroll] = useState(true);
 
     useEffect(() => {
-        console.log('rerender aos');
         AOS.init({
             duration: AOS_DURATION,
         });
@@ -32,7 +31,6 @@ function Header() {
     );
 
     useEffect(() => {
-        console.log('rerender scroll');
         const handleScroll = (event) => {
             toggleTop(window.scrollY === 0);
             setY(window.screenY);
@@ -62,7 +60,7 @@ function Header() {
                 >
                     <div className={cx('header__bar__toggle__line')}></div>
                 </label>
-                <div className={cx('header__bar__logo')}>Everyday epic</div>
+                <div className={cx('header__bar__logo')}>Everyday epic!</div>
                 <Link to="#" className={cx('header__bar__cta button--primary')}>
                     <span>Contact Us</span>
                 </Link>

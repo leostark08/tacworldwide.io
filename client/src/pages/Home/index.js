@@ -30,6 +30,8 @@ import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
 import marketing from '../../assets/images/about-us/marketing.jpeg';
 import strategy from '../../assets/images/about-us/strategy.jpg';
+import ServiceCard from '~/components/Layouts/components/ServiceCard';
+import ProjectCard from '~/components/Layouts/components/ProjectCard';
 const cx = classNames.bind(styles);
 const NUMBER_OF_LOGO = 5;
 SwiperCore.use([Virtual, Navigation, Pagination]);
@@ -223,23 +225,19 @@ function Home() {
                     </span>
                     <div className={cx('service__list')}>
                         {services.map((service, i) => (
-                            <div className={cx('service__list__item')} data-aos="fade-up">
-                                <div className={cx('service__item__cover')}>
-                                    <img src={service.coverUrl} alt={service.name} />
-                                </div>
-                                <div className={cx('service__list__item__info')}>
-                                    <div className={cx('service__list__item__info__name')}>{service.name}</div>
-                                    <div className={cx('service__list__item__info__child')}>
-                                        {service.childs.map((child, j) => (
-                                            <span>{child}</span>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
+                            <ServiceCard
+                                className={cx('service__list__item')}
+                                name={service.name}
+                                childs={service.childs}
+                                coverUrl={service.coverUrl}
+                                key={i}
+                            >
+                                {service.name}
+                            </ServiceCard>
                         ))}
                     </div>
                     <div className={cx('service__more', 'more')}>
-                        <Link to="/service" className={cx('button--primary')}>
+                        <Link to="/service" replace className={cx('button--primary')}>
                             View all services
                         </Link>
                     </div>
@@ -252,20 +250,18 @@ function Home() {
                     </span>
                     <div className={cx('works__list')}>
                         {works.map((work, i) => (
-                            <div className={cx('works__list__item')} data-aos="fade-up">
-                                <img src={work.cover} alt={work.name} className={cx('works__list__item__cover')} />
-                                <div className={cx('works__list__item__info')}>
-                                    <span className={cx('works__list__item__info__client')}>{work.client}</span>
-                                    <span className={cx('works__list__item__info__name')}>{work.name}</span>
-                                    <span className={cx('works__list__item__info__role')}>{work.role}</span>
-                                </div>
-                            </div>
+                            <ProjectCard
+                                cover={work.cover}
+                                name={work.name}
+                                client={work.client}
+                                role={work.role}
+                            ></ProjectCard>
                         ))}
                     </div>
                     <div className={cx('works__more', 'more')}>
-                        <Link to="#" className={cx('button--primary')}>
+                        <a href="project" className={cx('button--primary')}>
                             View all works
-                        </Link>
+                        </a>
                     </div>
                 </section>
             </div>

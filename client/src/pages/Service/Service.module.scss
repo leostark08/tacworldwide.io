@@ -1,0 +1,16 @@
+.services {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0 5rem 10rem 5rem;
+
+    &__item {
+        margin-bottom: 10rem;
+
+        &:nth-child(4n),
+        &:nth-child(4n+1) {
+            padding: 10rem;
+        }
+
+    }
+}

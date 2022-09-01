@@ -60,7 +60,11 @@ function Header() {
                 >
                     <div className={cx('header__bar__toggle__line')}></div>
                 </label>
-                <div className={cx('header__bar__logo')}>Everyday epic!</div>
+                <div className={cx('header__bar__logo')}>
+                    <Link to="/">
+                        <span>Everyday epic!</span>
+                    </Link>
+                </div>
                 <Link to="#" className={cx('header__bar__cta button--primary')}>
                     <span>Contact Us</span>
                 </Link>

@@ -18,6 +18,7 @@ import timebit_otc from '../../assets/images/logo/timebit-otc.png';
 import toyota from '../../assets/images/logo/toyota.png';
 import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
+import Pagnition from '~/components/Layouts/components/Pagnition';
 const cx = classNames.bind(styles);
 const logos = [
     diageo,
@@ -120,11 +121,20 @@ function Service() {
                 </span>
             </div>
             <div className={cx('content-container')}>
-                {services.map((service, i) => (
-                    <ServiceCard name={service.name} childs={service.childs} coverUrl={service.coverUrl} key={i}>
-                        {service.name}
-                    </ServiceCard>
-                ))}
+                <section className={cx('services')}>
+                    {services.map((service, i) => (
+                        <ServiceCard
+                            className={cx('services__item')}
+                            name={service.name}
+                            childs={service.childs}
+                            coverUrl={service.coverUrl}
+                            key={i}
+                        >
+                            {service.name}
+                        </ServiceCard>
+                    ))}
+                </section>
+                <Pagnition total={12} amount={6} active={1}></Pagnition>
             </div>
         </>
     );

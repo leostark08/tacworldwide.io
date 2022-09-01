@@ -45,6 +45,11 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
+
+            a {
+                color: var(--color);
+                text-decoration: none;
+            }
         }
 
         &--transparent {

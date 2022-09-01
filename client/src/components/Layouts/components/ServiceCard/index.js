@@ -6,8 +6,8 @@ const cx = classNames.bind(styles);
 
 function ServiceCard(props) {
     return (
-        <div className={cx('card')} data-aos="fade-up">
-            <div className={cx('service__item__cover')}>
+        <div className={cx('card', props.className)} data-aos="fade-up">
+            <div className={cx('card__cover')}>
                 <img src={props.coverUrl} alt={props.name} />
             </div>
             <div className={cx('card__info')}>

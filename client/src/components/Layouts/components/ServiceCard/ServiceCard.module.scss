@@ -4,40 +4,6 @@
     flex-direction: column;
     width: 50%;
 
-    &:nth-child(1) {
-        margin-top: 10rem;
-        padding: 0 20rem;
-    }
-
-    &:nth-child(2) {
-        margin-top: 5rem;
-        padding: 0 10rem;
-    }
-
-    &:nth-child(3) {
-        margin-top: 5rem;
-        justify-content: flex-end;
-        padding: 0 10rem;
-    }
-
-    &:nth-child(4) {
-        margin-top: 10rem;
-        justify-content: flex-end;
-        padding: 0 20rem;
-    }
-
-    &:nth-child(5) {
-        margin-top: 15rem;
-        justify-content: flex-end;
-        padding: 0 10rem;
-    }
-
-    &:nth-child(6) {
-        margin-top: 5rem;
-        justify-content: flex-end;
-        padding: 0 10rem;
-    }
-
     &__info {
         display: flex;
         flex-direction: column;

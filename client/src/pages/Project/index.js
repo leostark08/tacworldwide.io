@@ -6,8 +6,8 @@ import styles from './Project.module.scss';
 import strategy from '../../assets/images/about-us/strategy.jpg';
 import academy from '../../assets/images/about-us/academy.jpg';
 import marketing from '../../assets/images/about-us/marketing.jpeg';
-import ProjectCard from '~/components/Layouts/components/ProjectCard';
-import Pagnition from '~/components/Layouts/components/Pagnition';
+import ProjectCard from '~/layouts/components/ProjectCard';
+import Pagnition from '~/layouts/components/Pagnition';
 
 const cx = classNames.bind(styles);
 
@@ -62,6 +62,7 @@ function Project() {
                 <section className={cx('projects')}>
                     {works.map((work, i) => (
                         <ProjectCard
+                            key={i}
                             cover={work.cover}
                             name={work.name}
                             client={work.client}

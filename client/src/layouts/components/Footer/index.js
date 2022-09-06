@@ -81,8 +81,8 @@ function Footer() {
                 </ul>
             </div>
             <ul className={cx('footer__location')} data-aos="zoom-in">
-                {locations.map((location) => (
-                    <li>
+                {locations.map((location, i) => (
+                    <li key={i}>
                         <span>
                             <FaMapMarkerAlt /> {location}
                         </span>

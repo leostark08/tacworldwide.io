@@ -30,8 +30,8 @@ import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
 import marketing from '../../assets/images/about-us/marketing.jpeg';
 import strategy from '../../assets/images/about-us/strategy.jpg';
-import ServiceCard from '~/components/Layouts/components/ServiceCard';
-import ProjectCard from '~/components/Layouts/components/ProjectCard';
+import ServiceCard from '~/layouts/components/ServiceCard';
+import ProjectCard from '~/layouts/components/ProjectCard';
 const cx = classNames.bind(styles);
 const NUMBER_OF_LOGO = 5;
 SwiperCore.use([Virtual, Navigation, Pagination]);
@@ -226,11 +226,11 @@ function Home() {
                     <div className={cx('service__list')}>
                         {services.map((service, i) => (
                             <ServiceCard
+                                key={i}
                                 className={cx('service__list__item')}
                                 name={service.name}
                                 childs={service.childs}
                                 coverUrl={service.coverUrl}
-                                key={i}
                             >
                                 {service.name}
                             </ServiceCard>
@@ -251,6 +251,7 @@ function Home() {
                     <div className={cx('works__list')}>
                         {works.map((work, i) => (
                             <ProjectCard
+                                key={i}
                                 cover={work.cover}
                                 name={work.name}
                                 client={work.client}

@@ -14,7 +14,7 @@ function ServiceCard(props) {
                 <div className={cx('card__info__name')}>{props.name}</div>
                 <div className={cx('card__info__child')}>
                     {props.childs.map((child, j) => (
-                        <span>{child}</span>
+                        <span key={j}>{child}</span>
                     ))}
                 </div>
             </div>

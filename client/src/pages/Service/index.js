@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Service.module.scss';
-import ServiceCard from '~/components/Layouts/components/ServiceCard';
+import ServiceCard from '~/layouts/components/ServiceCard';
 import classNames from 'classnames/bind';
 import diageo from '../../assets/images/logo/diageo.png';
 import fasgreat from '../../assets/images/logo/fasgreat.png';
@@ -18,7 +18,7 @@ import timebit_otc from '../../assets/images/logo/timebit-otc.png';
 import toyota from '../../assets/images/logo/toyota.png';
 import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
-import Pagnition from '~/components/Layouts/components/Pagnition';
+import Pagnition from '~/layouts/components/Pagnition';
 const cx = classNames.bind(styles);
 const logos = [
     diageo,
@@ -124,11 +124,11 @@ function Service() {
                 <section className={cx('services')}>
                     {services.map((service, i) => (
                         <ServiceCard
+                            key={i}
                             className={cx('services__item')}
                             name={service.name}
                             childs={service.childs}
                             coverUrl={service.coverUrl}
-                            key={i}
                         >
                             {service.name}
                         </ServiceCard>

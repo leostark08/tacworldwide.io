@@ -11,7 +11,7 @@ function Pagnition(props) {
     var elms = [];
     for (let i = 0; i < size; i++) {
         elms.push(
-            <li className={cx('pagnition__item', props.active === i + 1 ? 'pagnition__item--active' : '')}>
+            <li key={i} className={cx('pagnition__item', props.active === i + 1 ? 'pagnition__item--active' : '')}>
                 <span>{i + 1}</span>
             </li>,
         );

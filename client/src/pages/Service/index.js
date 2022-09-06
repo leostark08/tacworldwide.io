@@ -1,46 +1,30 @@
-import React, { useState, useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 import styles from './Service.module.scss';
 import ServiceCard from '~/layouts/components/ServiceCard';
 import classNames from 'classnames/bind';
-import diageo from '../../assets/images/logo/diageo.png';
-import fasgreat from '../../assets/images/logo/fasgreat.png';
-import generali from '../../assets/images/logo/generali.png';
-import honda from '../../assets/images/logo/honda.png';
-import hyundai_tc_motor from '../../assets/images/logo/hyundai-tc-motor.png';
-import isuzu from '../../assets/images/logo/isuzu.png';
-import kao from '../../assets/images/logo/kao.png';
-import keep_working_club from '../../assets/images/logo/keep-working-club.png';
-import schneider from '../../assets/images/logo/schneider.png';
-import suzuki from '../../assets/images/logo/suzuki.png';
-import timebeat from '../../assets/images/logo/timebeat.png';
-import timebit from '../../assets/images/logo/timebit.png';
-import timebit_otc from '../../assets/images/logo/timebit-otc.png';
-import toyota from '../../assets/images/logo/toyota.png';
-import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
-import Pagnition from '~/layouts/components/Pagnition';
+
+// service covers
+import service1 from '../../assets/images/services/service1.jpg';
+import service2 from '../../assets/images/services/service2.jpg';
+import service3 from '../../assets/images/services/service3.jpg';
+import service4 from '../../assets/images/services/service4.jpg';
+import service5 from '../../assets/images/services/service5.jpg';
+import service6 from '../../assets/images/services/service6.jpg';
+import service7 from '../../assets/images/services/service7.jpg';
+import service8 from '../../assets/images/services/service8.jpg';
+import service9 from '../../assets/images/services/service9.jpg';
+import service10 from '../../assets/images/services/service10.jpg';
+import service11 from '../../assets/images/services/service11.jpg';
+import service12 from '../../assets/images/services/service12.jpg';
+
+import Pagination from '~/layouts/components/Pagination';
 const cx = classNames.bind(styles);
-const logos = [
-    diageo,
-    fasgreat,
-    generali,
-    honda,
-    hyundai_tc_motor,
-    isuzu,
-    kao,
-    keep_working_club,
-    schneider,
-    suzuki,
-    timebeat,
-    timebit,
-    timebit_otc,
-    toyota,
-    unilever,
-];
+
 const services = [
     {
         name: 'Branding Strategy & Creative',
-        coverUrl: academy,
+        coverUrl: service1,
         childs: [
             'Brand strategy',
             'Communication strategy',
@@ -51,53 +35,53 @@ const services = [
     },
     {
         name: 'Integrated Digital Marketing',
-        coverUrl: academy,
+        coverUrl: service2,
         childs: ['Strategy & campaigns', 'Concept development', 'Social Media', 'Content Creative & Development'],
     },
     {
         name: 'PR',
-        coverUrl: academy,
+        coverUrl: service3,
         childs: ['Strategic media relations', 'Communications Strategy', 'Community Management', 'Product Launching '],
     },
     {
         name: 'Strategic advisory',
-        coverUrl: academy,
+        coverUrl: service4,
         childs: ['Stakeholder engagement and insight generation', 'Competitor landscape analysis'],
     },
     {
         name: 'Data-driven Marketing',
-        coverUrl: academy,
+        coverUrl: service5,
         childs: ['SEO', 'Web/App Content', 'Online Ads', 'Dat management & automation'],
     },
     {
         name: 'Influencer Marketing',
-        coverUrl: academy,
+        coverUrl: service6,
         childs: ['Influencer/KOLs managerment', 'KOLs booking'],
     },
 
     {
         name: 'Digital/Media',
-        coverUrl: academy,
+        coverUrl: service7,
         childs: ['Media Planning', 'Media Buying'],
     },
     {
         name: 'Event Management',
-        coverUrl: academy,
+        coverUrl: service8,
         childs: ['PR launching event'],
     },
     {
         name: 'Advertising',
-        coverUrl: academy,
+        coverUrl: service9,
         childs: ['Videos', 'TVCs', 'Viral Clip', 'Campaign'],
     },
     {
         name: 'UX/UI Design',
-        coverUrl: academy,
+        coverUrl: service10,
         childs: ['Website and E-commerce', 'Platform', 'App', 'CRM'],
     },
     {
         name: 'Digital Content Studio',
-        coverUrl: academy,
+        coverUrl: service11,
         childs: [
             'Digital and content strategy',
             'Influencer strategy, engagement and content',
@@ -107,7 +91,7 @@ const services = [
     },
     {
         name: 'Event Management',
-        coverUrl: academy,
+        coverUrl: service12,
         childs: ['PR launching event'],
     },
 ];
@@ -115,7 +99,7 @@ const services = [
 function Service() {
     return (
         <>
-            <div className={cx('hero')}>
+            <div className={cx('hero', 'service-hero')}>
                 <span className={cx('hero', 'heading--super')}>
                     OUR<br></br>SERVICES
                 </span>
@@ -134,7 +118,7 @@ function Service() {
                         </ServiceCard>
                     ))}
                 </section>
-                <Pagnition total={12} amount={6} active={1}></Pagnition>
+                {/* <Pagination total={12} amount={6} active={1}></Pagination> */}
             </div>
         </>
     );

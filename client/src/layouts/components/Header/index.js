@@ -1,6 +1,6 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React, { useCallback, useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -8,11 +8,12 @@ import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt } from 're
 
 const cx = classNames.bind(styles);
 
-const AOS_DURATION = 2000;
+const AOS_DURATION = 1000;
 function Header() {
     const [isTop, toggleTop] = useState(true);
     const [y, setY] = useState(window.scrollY);
     const [isScrollUp, toggleScroll] = useState(true);
+    const [toggle, changeToggle] = useState(false);
 
     useEffect(() => {
         AOS.init({
@@ -20,6 +21,12 @@ function Header() {
         });
         AOS.refresh();
     }, []);
+
+    const location = useLocation();
+
+    useEffect(() => {
+        changeToggle(false);
+    }, [location]);
 
     const isScroll2Top = useCallback(
         (e) => {
@@ -43,7 +50,6 @@ function Header() {
         };
     }, [isScroll2Top]);
 
-    const [toggle, changeToggle] = useState(false);
     return (
         <div className={cx('header', toggle ? 'header--active' : '')}>
             <div
@@ -65,7 +71,7 @@ function Header() {
                         <span>Everyday epic!</span>
                     </Link>
                 </div>
-                <Link to="#" className={cx('header__bar__cta button--primary')}>
+                <Link to="contact" className={cx('header__bar__cta button--primary')}>
                     <span>Contact Us</span>
                 </Link>
                 {/* <RippleButton onClick={(e) => console.log(e)}>Contact Us</RippleButton> */}
@@ -74,22 +80,22 @@ function Header() {
                 <div className={cx('header__dialog__menu')}>
                     <ul className={cx('header__dialog__menu--primary')} data-aos="fade-right">
                         <li>
-                            <Link className={cx('header__dialog__menu--primary__link')} to="#">
+                            <Link className={cx('header__dialog__menu--primary__link')} to="/about">
                                 <span>About Us</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx('header__dialog__menu--primary__link')} to="#">
+                            <Link className={cx('header__dialog__menu--primary__link')} to="/service">
                                 <span>Services</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx('header__dialog__menu--primary__link')} to="#">
+                            <Link className={cx('header__dialog__menu--primary__link')} to="/project">
                                 <span>Our works</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx('header__dialog__menu--primary__link')} to="#">
+                            <Link className={cx('header__dialog__menu--primary__link')} to="/contact-us">
                                 <span>Contact Us</span>
                             </Link>
                         </li>

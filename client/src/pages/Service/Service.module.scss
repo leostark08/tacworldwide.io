@@ -1,3 +1,8 @@
+.service-hero {
+    background: url(../../assets/images/services/cover.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
 .services {
     display: flex;
     width: 100%;
@@ -7,9 +12,17 @@
     &__item {
         margin-bottom: 10rem;
 
-        &:nth-child(4n),
-        &:nth-child(4n+1) {
-            padding: 10rem;
+        // &:nth-child(4n),
+        // &:nth-child(4n+1) {
+        //     padding: 10rem;
+        // }
+
+        &:nth-child(2n) {
+            padding-left: 2.5rem;
+        }
+
+        &:nth-child(2n+1) {
+            padding-right: 2.5rem;
         }
 
     }

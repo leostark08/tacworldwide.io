@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
@@ -18,18 +18,31 @@ import hyundai_tc_motor from '../../assets/images/logo/hyundai-tc-motor.png';
 import isuzu from '../../assets/images/logo/isuzu.png';
 import kao from '../../assets/images/logo/kao.png';
 import keep_working_club from '../../assets/images/logo/keep-working-club.png';
-import laurier from '../../assets/images/logo/laurier.png';
 import schneider from '../../assets/images/logo/schneider.png';
 import suzuki from '../../assets/images/logo/suzuki.png';
 import timebeat from '../../assets/images/logo/timebeat.png';
 import timebit from '../../assets/images/logo/timebit.png';
 import timebit_otc from '../../assets/images/logo/timebit-otc.png';
 import toyota from '../../assets/images/logo/toyota.png';
-import unilever_studio from '../../assets/images/logo/unilever-studio.png';
 import unilever from '../../assets/images/logo/unilever.png';
 import academy from '../../assets/images/about-us/academy.jpg';
 import marketing from '../../assets/images/about-us/marketing.jpeg';
 import strategy from '../../assets/images/about-us/strategy.jpg';
+// service covers
+import service1 from '../../assets/images/services/service1.jpg';
+import service2 from '../../assets/images/services/service2.jpg';
+import service3 from '../../assets/images/services/service3.jpg';
+import service4 from '../../assets/images/services/service4.jpg';
+import service5 from '../../assets/images/services/service5.jpg';
+import service6 from '../../assets/images/services/service6.jpg';
+// project covers
+import project1 from '../../assets/images/projects/project1.jpg';
+import project2 from '../../assets/images/projects/project2.jpg';
+import project3 from '../../assets/images/projects/project3.jpg';
+import project4 from '../../assets/images/projects/project4.jpg';
+import project5 from '../../assets/images/projects/project5.jpg';
+import project6 from '../../assets/images/projects/project6.jpg';
+
 import ServiceCard from '~/layouts/components/ServiceCard';
 import ProjectCard from '~/layouts/components/ProjectCard';
 const cx = classNames.bind(styles);
@@ -58,7 +71,7 @@ const aboutImgs = [academy, marketing, strategy];
 const services = [
     {
         name: 'Branding Strategy & Creative',
-        coverUrl: academy,
+        coverUrl: service1,
         childs: [
             'Brand strategy',
             'Communication strategy',
@@ -69,71 +82,71 @@ const services = [
     },
     {
         name: 'Integrated Digital Marketing',
-        coverUrl: academy,
+        coverUrl: service2,
         childs: ['Strategy & campaigns', 'Concept development', 'Social Media', 'Content Creative & Development'],
     },
     {
         name: 'PR',
-        coverUrl: academy,
+        coverUrl: service3,
         childs: ['Strategic media relations', 'Communications Strategy', 'Community Management', 'Product Launching '],
     },
     {
         name: 'Strategic advisory',
-        coverUrl: academy,
+        coverUrl: service4,
         childs: ['Stakeholder engagement and insight generation', 'Competitor landscape analysis'],
     },
     {
         name: 'Data-driven Marketing',
-        coverUrl: academy,
+        coverUrl: service5,
         childs: ['SEO', 'Web/App Content', 'Online Ads', 'Dat management & automation'],
     },
     {
         name: 'Influencer Marketing',
-        coverUrl: academy,
+        coverUrl: service6,
         childs: ['Influencer/KOLs managerment', 'KOLs booking'],
     },
 ];
 
 const works = [
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Honda PR',
+        client: 'Honda',
+        role: 'Influencer Marketing',
+        cover: project1,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Hyundai PR',
+        client: 'Hyundai',
+        role: 'Data-driven Marketing',
+        cover: project2,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Suzuki Event',
+        client: 'Suzuki',
+        role: 'Integrated Digital Marketing',
+        cover: project3,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Toyota Marketing',
+        client: 'Toyota',
+        role: 'Branding Strategy & Creative',
+        cover: project4,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Unilever PR',
+        client: 'Unilever',
+        role: 'Integrated Digital Marketing',
+        cover: project5,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Generali',
+        client: 'Generali',
+        role: 'Branding Strategy & Creative',
+        cover: project6,
     },
 ];
 
-const AOS_DURATION = 2000;
+const AOS_DURATION = 1000;
 const logo2gr = new Array(Math.ceil(logos.length / NUMBER_OF_LOGO)).fill().map((_) => logos.splice(0, NUMBER_OF_LOGO));
 function Home() {
     useEffect(() => {
@@ -156,10 +169,10 @@ function Home() {
             </section>
             <div className={cx('content-container')}>
                 <section id={cx('partner')} className={cx('partner', 'section')}>
-                    <span className={cx('partner__heading', 'heading--2')}>OUR CLIENTS</span>
+                    <span className={cx('partner__heading', 'heading')}>Our Clients</span>
                     <span className={cx('partner__describe', 'describe')}>
-                        Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius;
-                        dignissim elementum.
+                        Lorem ipsum odor amet, consectetuer adipiscing elit.<br></br>Ac purus in massa egestas mollis
+                        varius; dignissim elementum.
                     </span>
                     <div className={cx('partner__logos')}>
                         {logo2gr.map((group, index) => (
@@ -190,29 +203,35 @@ function Home() {
                     </div>
                 </section>
                 <section id={cx('about')} className={cx('about', 'section')}>
-                    <span className={cx('about__heading', 'heading--1')} data-aos="zoom-in-up">
-                        Who we are?
-                    </span>
                     <div className={cx('about__content')}>
                         <div className={cx('about__content__describe')} data-aos="zoom-in">
+                            <span className={cx('heading')} data-aos="zoom-in-up">
+                                Who we are?
+                            </span>
                             <p className={cx('describe')}>
                                 We believe that that there is a DOER in all of us who always have a indomitable spirit
                                 to do what can’t be done.
-                            </p>
-                            <p className={cx('describe')}>
+                                <br></br>
+                                <br></br>
                                 We are a creatively driven integrated marketing communications, fostering collaboration
                                 throughout the group with a strong innovation in technology-based.
                             </p>
+                            <Link to="#" className={cx('about__content__describe__more')}>
+                                <span>Explore more!</span>
+                            </Link>
                         </div>
                         <Swiper
-                            effect={'cards'}
-                            grabCursor={true}
-                            modules={{ EffectCards }}
                             className={cx('about__content__swiper', 'swiper')}
+                            modules={[Autoplay]}
                             data-aos="zoom-in"
+                            loop={true}
+                            autoplay={{
+                                delay: 2000,
+                                disableOnInteraction: false,
+                            }}
                         >
                             {aboutImgs.map((img, i) => (
-                                <SwiperSlide key={i}>
+                                <SwiperSlide className={cx('about__content__swiper__slide')} key={i}>
                                     <img src={img} alt="about-us" />
                                 </SwiperSlide>
                             ))}
@@ -221,7 +240,7 @@ function Home() {
                 </section>
                 <section id={cx('service')} className={cx('service', 'section')}>
                     <span className={cx('service__heading')} data-aos="zoom-in">
-                        Our<br></br>Services
+                        Our Services
                     </span>
                     <div className={cx('service__list')}>
                         {services.map((service, i) => (
@@ -243,10 +262,9 @@ function Home() {
                     </div>
                 </section>
 
-                <section className={cx('works', '')}>
-                    <span className={cx('works__describe')} data-aos="fade-up" data-aos-duration="5000">
-                        TAC provides communications consultancy, strategic development, creative development to deliver
-                        winning solutions for clients and brands.{' '}
+                <section className={cx('works', 'section')}>
+                    <span className={cx('works__heading', 'heading')} data-aos="zoom-in">
+                        Our Projects
                     </span>
                     <div className={cx('works__list')}>
                         {works.map((work, i) => (
@@ -256,13 +274,14 @@ function Home() {
                                 name={work.name}
                                 client={work.client}
                                 role={work.role}
+                                className={cx('works__list__item')}
                             ></ProjectCard>
                         ))}
                     </div>
                     <div className={cx('works__more', 'more')}>
-                        <a href="project" className={cx('button--primary')}>
-                            View all works
-                        </a>
+                        <Link to="/project" replace className={cx('button--primary')}>
+                            View all projects
+                        </Link>
                     </div>
                 </section>
             </div>

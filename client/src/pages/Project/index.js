@@ -1,52 +1,56 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Project.module.scss';
 
-import strategy from '../../assets/images/about-us/strategy.jpg';
-import academy from '../../assets/images/about-us/academy.jpg';
-import marketing from '../../assets/images/about-us/marketing.jpeg';
 import ProjectCard from '~/layouts/components/ProjectCard';
-import Pagnition from '~/layouts/components/Pagnition';
+import Pagination from '~/layouts/components/Pagination';
+
+// project covers
+import project1 from '../../assets/images/projects/project1.jpg';
+import project2 from '../../assets/images/projects/project2.jpg';
+import project3 from '../../assets/images/projects/project3.jpg';
+import project4 from '../../assets/images/projects/project4.jpg';
+import project5 from '../../assets/images/projects/project5.jpg';
+import project6 from '../../assets/images/projects/project6.jpg';
 
 const cx = classNames.bind(styles);
 
 const works = [
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Honda PR',
+        client: 'Honda',
+        role: 'Influencer Marketing',
+        cover: project1,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: academy,
+        name: 'Hyundai PR',
+        client: 'Hyundai',
+        role: 'Data-driven Marketing',
+        cover: project2,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: marketing,
+        name: 'Suzuki Event',
+        client: 'Suzuki',
+        role: 'Integrated Digital Marketing',
+        cover: project3,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: academy,
+        name: 'Toyota Marketing',
+        client: 'Toyota',
+        role: 'Branding Strategy & Creative',
+        cover: project4,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: marketing,
+        name: 'Unilever PR',
+        client: 'Unilever',
+        role: 'Integrated Digital Marketing',
+        cover: project5,
     },
     {
-        name: 'Project name',
-        client: 'Client',
-        role: 'Main role',
-        cover: strategy,
+        name: 'Generali',
+        client: 'Generali',
+        role: 'Branding Strategy & Creative',
+        cover: project6,
     },
 ];
 
@@ -54,7 +58,7 @@ function Project() {
     return (
         <>
             <div className={cx('hero')}>
-                <span className={cx('hero', 'heading--super')}>
+                <span className={cx('hero', 'heading--super', 'project-hero')}>
                     OUR<br></br>PROJECTS
                 </span>
             </div>
@@ -67,10 +71,11 @@ function Project() {
                             name={work.name}
                             client={work.client}
                             role={work.role}
+                            className={cx('projects__item')}
                         ></ProjectCard>
                     ))}
                 </section>
-                <Pagnition total={12} amount={6} active={1}></Pagnition>
+                <Pagination total={12} amount={6} active={1}></Pagination>
             </div>
         </>
     );

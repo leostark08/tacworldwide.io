@@ -1,3 +1,5 @@
+@import '../../../components/GlobalStyles/variable.scss';
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -7,12 +9,21 @@
     padding: 5rem;
     position: relative;
 
+    @include breakpoint(md) {
+        width: 100%;
+    }
+
     &__logo {
         flex: 1;
+
+        @include breakpoint(md) {
+            width: 100%;
+        }
     }
 
     &__menu {
         flex: 1;
+
 
 
         &--primary {
@@ -62,6 +73,10 @@
     &__location {
         flex: 1;
         list-style: none;
+
+        @include breakpoint(md) {
+            width: 100%;
+        }
 
         li {
             margin-top: 1rem;

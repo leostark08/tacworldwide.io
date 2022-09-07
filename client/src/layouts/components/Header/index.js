@@ -2,25 +2,16 @@ import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import { Link, useLocation } from 'react-router-dom';
 import React, { useCallback, useEffect, useState } from 'react';
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt } from 'react-icons/fa';
 
 const cx = classNames.bind(styles);
 
-const AOS_DURATION = 1000;
 function Header() {
     const [isTop, toggleTop] = useState(true);
     const [y, setY] = useState(window.scrollY);
     const [isScrollUp, toggleScroll] = useState(true);
     const [toggle, changeToggle] = useState(false);
-
-    useEffect(() => {
-        AOS.init({
-            duration: AOS_DURATION,
-        });
-        AOS.refresh();
-    }, []);
 
     const location = useLocation();
 
@@ -71,14 +62,14 @@ function Header() {
                         <span>Everyday epic!</span>
                     </Link>
                 </div>
-                <Link to="/contact" className={cx('header__bar__cta button--primary')}>
+                <Link to="/contact" className={cx('header__bar__cta', 'button--primary')}>
                     <span>Contact Us</span>
                 </Link>
                 {/* <RippleButton onClick={(e) => console.log(e)}>Contact Us</RippleButton> */}
             </div>
             <div className={cx('header__dialog')}>
                 <div className={cx('header__dialog__menu')}>
-                    <ul className={cx('header__dialog__menu--primary')} data-aos="fade-right">
+                    <ul className={cx('header__dialog__menu--primary')}>
                         <li>
                             <Link className={cx('header__dialog__menu--primary__link')} to="/about">
                                 <span>About Us</span>
@@ -163,7 +154,7 @@ function Header() {
 
                         <ul className={cx('header__dialog__menu--contact__office')}>
                             <Link to="#" className={cx('header__dialog__menu--contact__office__link')}>
-                                <p>tacworldwide@gmail.com </p>
+                                <p>info@everydayepic.com</p>
                             </Link>
                             <Link to="#" className={cx('header__dialog__menu--contact__office__link')}>
                                 <p>+84 123 456 789</p>

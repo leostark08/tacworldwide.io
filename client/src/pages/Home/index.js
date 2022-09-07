@@ -3,7 +3,7 @@ import styles from './Home.module.scss';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Pagination, Navigation, EffectCards, Virtual } from 'swiper';
+import SwiperCore, { Autoplay, Pagination, Navigation, Virtual } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/effect-cards';
@@ -12,6 +12,10 @@ import 'aos/dist/aos.css';
 
 import diageo from '../../assets/images/logo/diageo.png';
 import fasgreat from '../../assets/images/logo/fasgreat.png';
+import samsung from '../../assets/images/logo/samsung.png';
+import cmc from '../../assets/images/logo/cmc.png';
+import mobifone from '../../assets/images/logo/mobifone.png';
+import dienquang from '../../assets/images/logo/dien-quang.png';
 import generali from '../../assets/images/logo/generali.png';
 import honda from '../../assets/images/logo/honda.png';
 import hyundai_tc_motor from '../../assets/images/logo/hyundai-tc-motor.png';
@@ -43,30 +47,38 @@ import project4 from '../../assets/images/projects/project4.jpg';
 import project5 from '../../assets/images/projects/project5.jpg';
 import project6 from '../../assets/images/projects/project6.jpg';
 
+// about
+import inspire from '../../assets/images/about-us/inspire.jpg';
+import creative from '../../assets/images/about-us/creative.jpg';
+import unique from '../../assets/images/about-us/unique1.jpg';
+import energy from '../../assets/images/about-us/energy.jpg';
+
 import ServiceCard from '~/layouts/components/ServiceCard';
 import ProjectCard from '~/layouts/components/ProjectCard';
 const cx = classNames.bind(styles);
 const NUMBER_OF_LOGO = 5;
 SwiperCore.use([Virtual, Navigation, Pagination]);
 const logos = [
-    diageo,
-    fasgreat,
-    generali,
-    honda,
-    hyundai_tc_motor,
-    isuzu,
-    kao,
-    keep_working_club,
-    schneider,
-    suzuki,
-    timebeat,
-    timebit,
-    timebit_otc,
-    toyota,
-    unilever,
+    { src: suzuki },
+    { src: toyota },
+    { src: honda },
+    { src: isuzu },
+    { src: generali },
+    { src: diageo },
+    { src: samsung },
+    { src: unilever },
+    { src: cmc },
+    { src: schneider },
+    { src: kao },
+    { src: fasgreat },
+    { src: hyundai_tc_motor },
+    // { src: timebit },
+    { src: mobifone },
+    { src: dienquang },
+    // keep_working_club,
 ];
 
-const aboutImgs = [academy, marketing, strategy];
+const aboutImgs = [inspire, creative, energy, unique];
 
 const services = [
     {
@@ -179,14 +191,31 @@ function Home() {
                             <Swiper
                                 key={index}
                                 className={cx('swiper partner-swiper', 'partner__logos__swiper')}
-                                spaceBetween={150}
                                 slidesPerView={5}
                                 loop={true}
                                 simulateTouch={false}
-                                // autoplay={{
-                                //     delay: 4000 + index * 100,
-                                //     disableOnInteraction: false,
-                                // }}
+                                breakpoints={{
+                                    // when window width is >= 320px
+                                    320: {
+                                        spaceBetween: 20,
+                                    },
+                                    // when window width is >= 480px
+                                    480: {
+                                        spaceBetween: 30,
+                                    },
+                                    // when window width is >= 768px
+                                    768: {
+                                        spaceBetween: 50,
+                                    },
+                                    // when window width is >= 1024px
+                                    1024: {
+                                        spaceBetween: 100,
+                                    },
+                                    // when window width is >= 1440px
+                                    1440: {
+                                        spaceBetween: 150,
+                                    },
+                                }}
                                 pagination={{
                                     clickable: true,
                                 }}
@@ -194,8 +223,14 @@ function Home() {
                                 data-aos="zoom-in"
                             >
                                 {group.map((logo, i) => (
-                                    <SwiperSlide key={i}>
-                                        {<img className={cx('partner__logos__img')} src={logo} alt="Partner Logo" />}
+                                    <SwiperSlide key={i} className={cx('partner__logos__swiper__slide')}>
+                                        {
+                                            <img
+                                                className={cx('partner__logos__img')}
+                                                src={logo.src}
+                                                alt="Partner Logo"
+                                            />
+                                        }
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
@@ -205,9 +240,7 @@ function Home() {
                 <section id={cx('about')} className={cx('about', 'section')}>
                     <div className={cx('about__content')}>
                         <div className={cx('about__content__describe')} data-aos="zoom-in">
-                            <span className={cx('heading')} data-aos="zoom-in-up">
-                                Who we are?
-                            </span>
+                            <span className={cx('heading')}>Who we are?</span>
                             <p className={cx('describe')}>
                                 We believe that that there is a DOER in all of us who always have a indomitable spirit
                                 to do what can’t be done.
@@ -220,26 +253,16 @@ function Home() {
                                 <span>Explore more!</span>
                             </Link>
                         </div>
-                        <Swiper
-                            className={cx('about__content__swiper', 'swiper')}
-                            modules={[Autoplay]}
-                            data-aos="zoom-in"
-                            loop={true}
-                            autoplay={{
-                                delay: 2000,
-                                disableOnInteraction: false,
-                            }}
-                        >
+
+                        <div className={cx('about__content__imgs')} data-aos="zoom-in">
                             {aboutImgs.map((img, i) => (
-                                <SwiperSlide className={cx('about__content__swiper__slide')} key={i}>
-                                    <img src={img} alt="about-us" />
-                                </SwiperSlide>
+                                <img key={i} src={img} alt={img} />
                             ))}
-                        </Swiper>
+                        </div>
                     </div>
                 </section>
                 <section id={cx('service')} className={cx('service', 'section')}>
-                    <span className={cx('service__heading')} data-aos="zoom-in">
+                    <span className={cx('service__heading', 'heading')} data-aos="zoom-in">
                         Our Services
                     </span>
                     <div className={cx('service__list')}>

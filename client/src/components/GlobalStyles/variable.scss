@@ -1,0 +1,69 @@
+@font-face {
+    font-family: Averta-Light;
+    src: url(../../assets/fonts/Averta-Light.otf) format("truetype");
+}
+
+@font-face {
+    font-family: Averta-Bold;
+    src: url(../../assets/fonts/Averta-Bold.otf) format("truetype");
+}
+
+@font-face {
+    font-family: Averta-Semibold;
+    src: url(../../assets/fonts/Averta-Semibold.otf) format("truetype");
+}
+
+@font-face {
+    font-family: Averta-Thin;
+    src: url(../../assets/fonts/Averta-Thin.otf) format("truetype");
+}
+
+// screen size
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1280px;
+$xl: 1440px;
+// font
+$font-thin: Averta-Thin;
+$font-semibold: Averta-Semibold;
+$font-bold: Averta-Bold;
+// colors
+$primary: #0F4C81;
+$primary-light: #4c77b1;
+$primary-dark: #002554;
+$overlay: rgba(0, 0, 0, 0.3);
+$white: #fff;
+$black: #000;
+
+@mixin breakpoint($point) {
+    @if $point ==xl {
+        @media (max-width: ($xl - 1)) {
+            @content;
+        }
+    }
+
+    @if $point ==lg {
+        @media (max-width: ($lg - 1)) {
+            @content;
+        }
+    }
+
+    @if $point ==md {
+        @media (max-width: ($md - 1)) {
+            @content;
+        }
+    }
+
+    @if $point ==sm {
+        @media (max-width: ($sm - 1)) {
+            @content;
+        }
+    }
+
+    @if $point ==xs {
+        @media (max-width: ($xs - 1)) {
+            @content;
+        }
+    }
+}

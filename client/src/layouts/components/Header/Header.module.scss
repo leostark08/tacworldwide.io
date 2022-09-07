@@ -1,3 +1,5 @@
+@import '../../../components/GlobalStyles/variable.scss';
+
 .header {
     width: 100%;
     display: flex;
@@ -11,10 +13,14 @@
         z-index: 999;
         position: fixed;
         padding: 2rem 5rem;
-        background-color: var(--bg);
+        background-color: $white;
         align-items: center;
         transition: all .5s;
         transform: translateY(-100%);
+
+        @include breakpoint(sm) {
+            flex-direction: row-reverse;
+        }
 
         &__toggle {
             cursor: pointer;
@@ -49,6 +55,12 @@
             a {
                 color: var(--color);
                 text-decoration: none;
+            }
+        }
+
+        &__cta {
+            @include breakpoint(sm) {
+                display: none !important;
             }
         }
 
@@ -93,9 +105,9 @@
 
     &__dialog {
         width: 100%;
-        padding-right: 10rem;
+        padding-right: 5rem;
         height: 100%;
-        background-color: var(--bg);
+        background-color: $white;
         position: fixed;
         z-index: 11;
         left: 0;
@@ -106,6 +118,10 @@
         align-items: center;
         transition: all .5s ease;
 
+        @include breakpoint(sm) {
+            padding-right: 0;
+        }
+
         &__menu {
             display: flex;
             justify-content: space-between;
@@ -115,8 +131,12 @@
             &--primary {
                 list-style: none;
 
+                @include breakpoint(sm) {
+                    width: 100%;
+                }
+
                 &__link {
-                    font-size: 70px;
+                    font-size: 7rem;
                     text-decoration: none;
                     color: var(--color);
                     line-height: 116%;
@@ -134,7 +154,20 @@
                         box-shadow: inset 600px 0 0 0 var(--primary);
                         color: white;
                     }
+
+                    @include breakpoint(xl) {
+                        font-size: 5rem;
+                    }
+
+                    @include breakpoint(lg) {
+                        font-size: 3.5rem;
+                        padding: 1rem 5rem;
+                    }
                 }
+            }
+
+            @include breakpoint(md) {
+                flex-wrap: wrap;
             }
 
             &--secondary {
@@ -142,13 +175,17 @@
                 flex-direction: column;
                 justify-content: space-between;
 
+                @include breakpoint(sm) {
+                    width: 100%;
+                }
+
                 &__menu,
                 &__social {
                     list-style: none;
 
                     &__link {
                         display: flex;
-                        font-size: 30px;
+                        font-size: 3rem;
                         text-decoration: none;
                         color: var(--color);
                         transition: all 0.3s;
@@ -157,7 +194,21 @@
                             color: var(--primary);
                             transition: all 0.3s;
                         }
+
+                        @include breakpoint(xl) {
+                            font-size: 2.5rem;
+                        }
+
+                        @include breakpoint(md) {
+                            justify-content: flex-end;
+                        }
+
+                        @include breakpoint(sm) {
+                            justify-content: flex-start;
+                        }
+
                     }
+
                 }
 
                 &__menu {
@@ -165,9 +216,15 @@
                     flex-direction: column;
                     justify-content: center;
 
+
+
                     &__link {
                         position: relative;
                         padding: 0.5rem 0;
+
+                        @include breakpoint(sm) {
+                            padding: .5rem 5rem;
+                        }
 
                         &::before {
                             content: '';
@@ -191,6 +248,15 @@
                 &__social {
                     display: flex;
                     justify-content: space-between;
+
+                    @include breakpoint(sm) {
+                        padding: .5rem 5rem;
+                        justify-content: flex-end;
+
+                        &__link {
+                            margin-left: 2rem;
+                        }
+                    }
                 }
             }
 
@@ -212,10 +278,24 @@
                     list-style: none;
                     font-size: 14px;
 
+                    @include breakpoint(md) {
+                        margin-top: 2.5rem;
+                    }
+
                     &__link {
                         color: var(--color);
                         text-decoration: underline;
                     }
+                }
+
+                @include breakpoint(md) {
+                    width: 100%;
+                    padding: 5rem;
+                }
+
+                @include breakpoint(sm) {
+                    width: 100%;
+                    padding: 2.5rem 5rem;
                 }
             }
         }

@@ -29,16 +29,16 @@ function Footer() {
             <div className={cx('footer__menu')} data-aos="zoom-in">
                 <ul className={cx('footer__menu--primary')}>
                     <li>
-                        <Link to="#">ABOUT US</Link>
+                        <Link to="/about">About us</Link>
                     </li>
                     <li>
-                        <Link to="#">SERVICES</Link>
+                        <Link to="/service">Services</Link>
                     </li>
                     <li>
-                        <Link to="#">WORKS</Link>
+                        <Link to="/project">Our projects</Link>
                     </li>
                     <li>
-                        <Link to="#">CONTACT US</Link>
+                        <Link to="/contact">Contact us</Link>
                     </li>
                 </ul>
                 <ul className={cx('footer__menu--secondary')}>
@@ -55,7 +55,7 @@ function Footer() {
                     <span>+84 123 456 789</span>
                 </Link>
                 <Link to="#" className={cx('connect--underline')}>
-                    <span>everydayepic@gmail.com</span>
+                    <span>info@everydayepic.com</span>
                 </Link>
                 <ul className={cx('footer__connect__socials')}>
                     <li>

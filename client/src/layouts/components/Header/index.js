@@ -71,7 +71,7 @@ function Header() {
                         <span>Everyday epic!</span>
                     </Link>
                 </div>
-                <Link to="contact" className={cx('header__bar__cta button--primary')}>
+                <Link to="/contact" className={cx('header__bar__cta button--primary')}>
                     <span>Contact Us</span>
                 </Link>
                 {/* <RippleButton onClick={(e) => console.log(e)}>Contact Us</RippleButton> */}
@@ -91,11 +91,11 @@ function Header() {
                         </li>
                         <li>
                             <Link className={cx('header__dialog__menu--primary__link')} to="/project">
-                                <span>Our works</span>
+                                <span>Our projects</span>
                             </Link>
                         </li>
                         <li>
-                            <Link className={cx('header__dialog__menu--primary__link')} to="/contact-us">
+                            <Link className={cx('header__dialog__menu--primary__link')} to="/contact">
                                 <span>Contact Us</span>
                             </Link>
                         </li>

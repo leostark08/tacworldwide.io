@@ -7,7 +7,7 @@ import { FaFacebook, FaYoutube, FaTelegram, FaTwitter, FaMapMarkerAlt } from 're
 
 const cx = classNames.bind(styles);
 
-function Header() {
+function Header(props) {
     const [isTop, toggleTop] = useState(true);
     const [y, setY] = useState(window.scrollY);
     const [isScrollUp, toggleScroll] = useState(true);
@@ -41,6 +41,16 @@ function Header() {
         };
     }, [isScroll2Top]);
 
+    const contactButton = props.disableContact ? (
+        ''
+    ) : (
+        <Link to="/contact" className={cx('header__bar__cta', 'button--primary')}>
+            <span>Contact Us</span>
+        </Link>
+    );
+
+    console.log(contactButton);
+
     return (
         <div className={cx('header', toggle ? 'header--active' : '')}>
             <div
@@ -62,9 +72,7 @@ function Header() {
                         <span>Everyday epic!</span>
                     </Link>
                 </div>
-                <Link to="/contact" className={cx('header__bar__cta', 'button--primary')}>
-                    <span>Contact Us</span>
-                </Link>
+                {contactButton}
                 {/* <RippleButton onClick={(e) => console.log(e)}>Contact Us</RippleButton> */}
             </div>
             <div className={cx('header__dialog')}>
@@ -132,7 +140,7 @@ function Header() {
 
                     <div className={cx('header__dialog__menu--contact')}>
                         <ul className={cx('header__dialog__menu--contact__location')}>
-                            <label>TAC Worldwide</label>
+                            <label>Offices</label>
                             <li>
                                 <p>
                                     <FaMapMarkerAlt /> 5th Floor, 539 Vu Tong Phan Street, Thanh Xuan District, Ha Noi.
